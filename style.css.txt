@@ -1,0 +1,164 @@
+/* ==================== MAIN THEME COLORS ==================== */
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f39c12;
+    --success-color: #27ae60;
+    --danger-color: #e74c3c;
+    --warning-color: #f39c12;
+    --info-color: #3498db;
+    --light-bg: #f8f9fa;
+    --dark-bg: #2c3e50;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+/* ==================== GLOBAL STYLES ==================== */
+.stApp {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Hide Streamlit branding */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+
+/* ==================== CUSTOM CONTAINERS ==================== */
+.main-container {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin: 1rem 0;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+}
+
+.main-container:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+/* ==================== CUSTOM CARDS ==================== */
+.risk-card {
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 
+        20px 20px 60px #d0d0d0,
+        -20px -20px 60px #ffffff;
+    margin: 20px 0;
+    transition: var(--transition);
+}
+
+.risk-card:hover {
+    transform: scale(1.05);
+}
+
+.risk-low { border-left: 5px solid var(--success-color); }
+.risk-moderate { border-left: 5px solid var(--warning-color); }
+.risk-high { border-left: 5px solid var(--danger-color); }
+.risk-very-high { border-left: 5px solid #8b0000; }
+
+/* ==================== FORM STYLING ==================== */
+.stSlider > div > div > div {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.stSelectbox > div > div {
+    background-color: white;
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.stSelectbox > div > div:focus-within {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+/* ==================== BUTTON STYLING ==================== */
+.stButton > button {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.75rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    box-shadow: var(--card-shadow);
+}
+
+.stButton > button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+}
+
+/* ==================== METRIC CARDS ==================== */
+div[data-testid="metric-container"] {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    box-shadow: var(--card-shadow);
+    border-left: 4px solid var(--primary-color);
+    transition: var(--transition);
+}
+
+div[data-testid="metric-container"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ==================== SIDEBAR STYLING ==================== */
+.css-1d391kg {
+    background: linear-gradient(180deg, var(--primary-color), var(--dark-bg));
+}
+
+.css-1d391kg .stMarkdown {
+    color: white;
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .main-container {
+        padding: 1rem;
+        margin: 0.5rem 0;
+    }
+    
+    .risk-card {
+        padding: 20px;
+    }
+    
+    .stButton > button {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+}

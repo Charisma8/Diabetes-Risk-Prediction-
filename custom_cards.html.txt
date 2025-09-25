@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .health-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            margin: 10px 0;
+        }
+        
+        .health-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+        }
+        
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .card-description {
+            font-size: 1rem;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+        
+        .risk-indicator {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin: 0 5px;
+        }
+        
+        .risk-low { background: #27ae60; }
+        .risk-medium { background: #f39c12; }
+        .risk-high { background: #e74c3c; }
+        
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+            50% { box-shadow: 0 8px 32px rgba(102, 126, 234, 0.6); }
+        }
+        
+        .glow-animation {
+            animation: glow 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="health-card glow-animation">
+        <span class="card-icon">🏥</span>
+        <div class="card-title">AI Health Prediction</div>
+        <div class="card-description">
+            Advanced machine learning algorithms analyze your health data to provide personalized risk assessments.
+        </div>
+        <div style="margin-top: 15px;">
+            <span class="risk-indicator risk-low"></span>
+            <span class="risk-indicator risk-medium"></span>
+            <span class="risk-indicator risk-high"></span>
+        </div>
+    </div>
+</body>
+</html>
